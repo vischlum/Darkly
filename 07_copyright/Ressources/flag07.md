@@ -10,6 +10,7 @@ Afin d'indiquer a notre navigateur et au site le referer et le user-agent desire
 curl -e "https://www.nsa.gov/" -A "ft_bornToSec" http://[ip]/index.php\?page\=e43ad1fdc54babe674da7c7b8f0127bde61de3fbe01def7d00f151c2fcca6d1c | grep flag
 On peut aussi le faire avec des outils de navigateuret des extensions.
 Avec le grep de flag, nous recuperons le flag.
+\<center\>\<h2 style=\"margin-top:50px;"> The flag is : f2a29020ef3132e01dd61df97fd33ec8d7fcd1388cc9601e7db691d17d4d6188\</h2>\<br/>\<img src="images/win.png" alt="" width=200px height=200px>\</center> \<audio id="best_music_ever" src="audio/music.mp3"preload="true" loop="loop" autoplay="autoplay">
 
 ### Expliquer la faille
 Le referer indique la page precedente sur laquelle nous nous trouvions avant d'arriver a l'adresse actuelle, elle permet de debloquer ou non certains composant sur une page, comme des coupons de reduction sur des shop en ligne si l'on vient d'un site partenaire. Le user-agent specifie le navigateur avec lequel on surf et ses informations.
