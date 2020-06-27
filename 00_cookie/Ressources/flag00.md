@@ -2,6 +2,7 @@
 Avec les outils de développement du navigateur, on observe que le site définit un cookie contenant un champ `i_am_admin` avec la valeur `68934a3e9455fa72420237eb05902327`. Cette valeur correspond au hash MD5 de `false`.  
 En remplaçant la valeur de ce champ par `b326b5062b2f0e69046810717534cb09` (hash MD5 de `true`) et en rechargant la page, on obtient une pop-in :
 > Good job! Flag : df2eb4ba34ed059a1e3e89ff4dfc13445f104a1a52295214def1c4fb1693a5c3
+Il est aussi possible d'observer et d'interagir avec les cookies a l'aide de l'outils Netcat dans le Terminal.
 
 ### Expliquer la faille
 Il ne faut pas baser la sécurité du site sur une valeur qui peut facilement être lisible et modifiable côté utilisateur (en l'espèce le contenu d'un cookie).
