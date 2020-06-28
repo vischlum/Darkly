@@ -1,17 +1,17 @@
 ### Comment obtenir le flag
-En regardant le fichier robots.txt du site, on apercoit differente informations interessante (tout les user-agent autorise, utile pour la resolution du flag.07) et deux pages: /whatever et /.hidden.
-On s'occupe ici de whatever: http://[ip]/whatever/
-Sur la page se trouve un fichier htpasswd contenant les informations d'un utilisateur:
-root:8621ffdbc5698829397d97767ac13db3
-le mdp est en md5, le dechiffrage nous donne: dragon
-En essayant ces id sur la page de connection principale du site nous avons une erreur, nous cherchons donc une page de connection differente:
-http://[ip]/admin/
-Les id marchent sur celles-ci, nous avons donc le flag.
+En regardant le fichier `robots.txt` du site, on repère différentes informations intéressantes (tous les `user-agent` autorisés, utile pour la résolution du flag07) et deux pages: `/whatever` et `/.hidden`.  
+On s'occupe ici de `whatever` (`http://[ip]/whatever/`)
+
+Sur la page se trouve un fichier `htpasswd` contenant les informations d'un utilisateur : `root:8621ffdbc5698829397d97767ac13db3`  
+Le mot de passe est le hash MD5 de `dragon`.
+
+En essayant ces identifiants sur la page de connexion principale du site, nous avons une erreur. Nous essayons alors sur la page de connexion du panel d'administration (`http://[ip]/admin/`).  
+Nous pouvons nous connecter, et obtenons ainsi le flag.
 
 ### Expliquer la faille
-Le fichier robots.txt, aussi appele protocole d'exclusion des robots, est un fichier place a la racine d'un site web contenant une liste des ressources du site qui ne sont pas censees etre indexees par les robots d'indexation des moteurs de recherche. Ce n'est pas un element de securite, simplement une directive d'utilisation pour les robots bienveillants.
-Car effectivement, un robot (ou un utilisateur) peut tout de meme aller voir ce fichier, ou les pages du site s'y trouvant afin de recuperer des informations qui ne lui sont pas destine comme des mail pour pratiquer le spam, ou autres. En l'occurence nous voyont l'existence d'un dossier contenant un fichier htpasswd, qui nous donne les id root de l'interface admin du site.
+Le fichier `robots.txt`, aussi appelé protocole d'exclusion des robots, est un fichier placé à la racine d'un site web contenant une liste des ressources du site qui ne sont pas censées etre indexées par les robots d'indexation des moteurs de recherche. Ce n'est pas un élément de sécurité, simplement une directive d'utilisation pour les robots bienveillants.  
+Les identifiants pour accéder au panel d'administration ne devraient pas être accessibles à n'importe quel visiteur (robot ou humain).  
 
 ### Comment la corriger
-Une premiere protection contre cette vulnerabilite serait d'interdire l'acces au fichier htpasswd, au lieu de la trouver dans le robots.txt peut etre la deplacer dans un fichier .htaccess.
-De correctement crypter son contenu.
+Une première protection contre cette vulnerabilité serait d'interdire l'accès au fichier `htpasswd`, avec un simple fichier [`.htaccess`](https://en.wikipedia.org/wiki/.htaccess) (puisque le site utilise Apache comme serveur web).  
+Il serait aussi intéressant de mieux [chiffrer le mot de passe](https://httpd.apache.org/docs/2.4/fr/misc/password_encryptions.html) en utilisant l'algorithm `bcrypt` (au lieu du MD5).
