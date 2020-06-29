@@ -2,8 +2,8 @@
 En regardant le fichier `robots.txt` du site, on repère différentes informations intéressantes (tous les `user-agent` autorisés, utile pour la résolution du flag07) et deux pages: `/whatever` et `/.hidden`.  
 On s'occupe ici de `hidden` (`http://[ip]/.hidden/`).
 
-Cette page contient 26 dossiers, eux-mêmes contenant 26 dossiers, qui à nouveau contiennent 26 dossiers, chacun contenant un `README`. Tous les `README` nous envoient chercher une information au sein de cette arborescence mais sêrement un seul d'entre eux nous sera utile.  
-Vu la taille à parcourir, nous décidons d'automatiser la tâche avec un script python (search_md5.py). Ce script, dans sa version finale, n'affiche les messages des README que s'il sont lu pour la première fois, et indique leurs provenance dans l'arborescence. Il parcours l'arborescence recursivement.
+Cette page contient 26 dossiers, eux-mêmes contenant 26 dossiers, qui à nouveau contiennent 26 dossiers, chacun contenant un `README`. Tous les `README` nous envoient chercher une information au sein de cette arborescence mais sûrement un seul d'entre eux nous sera utile.  
+Vu la taille à parcourir, nous décidons d'automatiser la tâche avec un script python (search_md5.py). Ce script, dans sa version finale, n'affiche les messages des README que s'il sont lu pour la première fois, et indique leurs provenance dans l'arborescence. Il parcourt l'arborescence recursivement.
 ```
 $> python3 search_md5.py [ip]
 
@@ -32,7 +32,7 @@ http://192.168.43.129/.hidden/whtccjokayshttvxycsvykxcfm/igeemtxnvexvxezqwntmzjl
 b'99dde1d35d1fdd283924d84e6d9f1d820\n'
 ```
 
-Il s'avère que le fichier `README` qui nous intéresse est trouvé en dernier, à l'adress `http://[ip]/.hidden/whtccjokayshttvxycsvykxcfm/igeemtxnvexvxezqwntmzjltkt/lmpanswobhwcozdqixbowvbrhw/README`  
+Il s'avère que le fichier `README` qui nous intéresse est trouvé en dernier, à l'adresse `http://[ip]/.hidden/whtccjokayshttvxycsvykxcfm/igeemtxnvexvxezqwntmzjltkt/lmpanswobhwcozdqixbowvbrhw/README`  
 Il contient le flag `99dde1d35d1fdd283924d84e6d9f1d820`
 
 ### Expliquer la faille
@@ -40,4 +40,4 @@ Idem flag11, les visiteurs ne devraient pas avoir accès à ce genre de dossiers
 
 ### Comment la corriger
 Les fichier ou dossiers `.hidden` ne sont pas censées contenir d'informations importantes. Ils sont généralement utilisés pour sauvegarder des préférences utilisateur ou des états utilitaires.  
-Ils ne sont pas sécurisés car leurs accès n'est pas restreint, mais cela pourrait se faire simplement avec un fichier [`.htaccess`]( visiteurs ne devraient pas avoir accès à ce genre de dossiers, uniquement au site web.).
+Ils ne sont pas sécurisés car leur accès n'est pas restreint, mais cela pourrait se faire simplement avec un fichier [`.htaccess`](https://en.wikipedia.org/wiki/.htaccess).

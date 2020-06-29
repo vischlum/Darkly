@@ -1,6 +1,6 @@
 ### Comment obtenir le flag
 Sur la page de *copyright*, on profite d'une petite musique, et on obtient le flag: `decrypt(e43ad1fdc54babe674da7c7b8f0127bde61de3fbe01def7d00f151c2fcca6d1c)` -> `TAMERE`.  
-N'ayant plus d'information affichée, on décide à nouveau d'utiliser l'inspecteur d'elements. On trouve ainsi des commentaires dans le code html. Deux d'entres eux nous intéressent particulièrement :
+N'ayant plus d'information affichée, on décide à nouveau d'utiliser l'inspecteur d'éléments. On trouve ainsi des commentaires dans le code HTML. Deux d'entres eux nous intéressent particulièrement :
 - `You must cumming from : "https://www.nsa.gov/" to go to the next step`
 - `Let's use this browser : "ft_bornToSec". It will help you a lot.`
 
@@ -15,7 +15,7 @@ On peut aussi le faire avec les outils de développement du navigateur.
 
 ### Expliquer la faille
 Le `referer` indique la page précédente depuis laquelle nous arrivons sur la page actuelle. Elle permet de débloquer ou non certains composants sur une page (par exemple des coupons de réduction sur des boutiques en ligne si l'on vient d'un site partenaire). Le `user-agent` spécifie le navigateur avec lequel on surfe et ses informations.  
-En ayant la main sur ces deux informations, nous pouvont nous faire passer pour ce que nous ne sommes pas et accéder à des informations confidentielles.
+En ayant la main sur ces deux informations, nous pouvons nous faire passer pour ce que nous ne sommes pas et accéder à des informations confidentielles.
 
 Même si les commentaires ne sont pas directement visibles pour les visiteurs d'un site, ils sont bien visibles dans le code source de la page. Il est donc important de ne pas laisser traîner de données sensibles dans les commentaires avant la mise en production (cela vaut aussi pour les [`console.log`](https://developer.mozilla.org/en-US/docs/Web/API/Console/log) et les [`var_dump`](https://www.php.net/manual/en/function.var-dump)).
 

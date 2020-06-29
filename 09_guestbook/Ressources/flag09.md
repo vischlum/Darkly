@@ -1,5 +1,5 @@
 ### Comment obtenir le flag
-En allant sur le formulaire permettant de laisser des feedback sur le site, on peut essayer d'injecter du code malveillant à l'aide de balise script ou de plusieurs autres methode portant le nom de [*Cross-site scripting*](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)) (XSS) : `\<script\>alert(42)\</script\>`  
+En allant sur le formulaire permettant de laisser des feedbacks sur le site, on peut essayer d'injecter du code malveillant à l'aide de balise script ou de plusieurs autres methode portant le nom de [*Cross-site scripting*](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)) (XSS) : `\<script\>alert(42)\</script\>`  
 On obtient ainsi le flag.
 
 ### Expliquer la faille

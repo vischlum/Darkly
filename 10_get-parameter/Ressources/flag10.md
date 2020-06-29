@@ -39,4 +39,4 @@ Sur Linux, `/etc/passwd` est le fichier contenant la liste de tous les utilisate
 ### Comment la corriger
 De façon assez basique, on pourrait simplement bloquer tout paramètre `page` commençant par un point. Il est préférable de vérifier les entrées utilisateur, idéalement de supprimer tout ce qui ne fait pas partie des données correctes pour naviguer sur le site.  
 Il est de toute façon indispensable d'empêcher l'utilisateur exécutant le site Internet (en général `www-data`) d'avoir accès à `/etc/passwd` ou tout autre fichier sensible du système, en configurant correctement les droits et permissions sur le serveur.  
-Enfin, vérifier si le serveur web et les logiciels sont à jour, et que les patches de sécurité ont bien été appliqués.
+Enfin, vérifier si le serveur web et les logiciels sont à jour, et si les patches de sécurité ont bien été appliqués.

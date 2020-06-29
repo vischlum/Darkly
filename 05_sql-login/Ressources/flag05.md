@@ -7,5 +7,5 @@ En se connectant au site avec ces identifiants (peu importe que ce soit `root` o
 Idem flag03 (injection SQL + attaque par dictionnaire)  
 
 ### Comment la corriger
-Idem flag03 (requêtes préparées + password_hash)  
+Idem flag03 (requêtes préparées + `password_hash`)  
 On pourrait aussi imaginer sécuriser la connexion avec un compte administrateur en mettant en place une [authentification à deux facteurs](https://en.wikipedia.org/wiki/Multi-factor_authentication) (par exemple en demandant un code envoyé par SMS en plus du mot de passe).

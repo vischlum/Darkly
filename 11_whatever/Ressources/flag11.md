@@ -1,5 +1,5 @@
 ### Comment obtenir le flag
-En regardant le fichier `robots.txt` du site, on repère différentes informations intéressantes (tous les `user-agent` autorisés, utile pour la résolution du flag07) et deux pages: `/whatever` et `/.hidden`.  
+En regardant le fichier `robots.txt` du site, on repère différentes informations intéressantes (notamment que tous les `user-agent` sont autorisés, utile pour la résolution du flag07) et deux pages: `/whatever` et `/.hidden`.  
 On s'occupe ici de `whatever` (`http://[ip]/whatever/`)
 
 Sur la page se trouve un fichier `htpasswd` contenant les informations d'un utilisateur : `root:8621ffdbc5698829397d97767ac13db3`  
