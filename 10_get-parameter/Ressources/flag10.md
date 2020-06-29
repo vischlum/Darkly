@@ -1,6 +1,6 @@
 ### Comment obtenir le flag
 En allant sur n'importe quel page du site contenant une requête GET dans l'url (comme `http://[ip]/?page=survey`), on essaye de changer la valeur du paramètre `page`.  
-On obtient alors un script alert. Cela nous donne l'idée d'utiliser une attaque de répertoires automatisés avec un script python. (inspect_recursion.py)  
+On obtient alors un script alert. Cela nous donne l'idée d'utiliser une attaque de répertoires automatisés avec un script python ([inspect_recursion.py](inspect_recursion.py)).  
 Ce script va simplement essayer d'accéder à l'URL du fichier `/etc/passwd` vu précédemment dans le dossier `whatever`, en rajoutant à chaque récursion un niveau de moins dans l'arborescence du serveur. Dans sa version finale, le script s'arrête quand l'alerte donne des indications sur le flag.  
 
 ```
