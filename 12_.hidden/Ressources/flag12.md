@@ -3,7 +3,7 @@ En regardant le fichier `robots.txt` du site, on repère différentes informatio
 On s'occupe ici de `hidden` (`http://[ip]/.hidden/`).
 
 Cette page contient 26 dossiers, eux-mêmes contenant 26 dossiers, qui à nouveau contiennent 26 dossiers, chacun contenant un `README`. Tous les `README` nous envoient chercher une information au sein de cette arborescence mais sûrement un seul d'entre eux nous sera utile.  
-Vu la taille à parcourir, nous décidons d'automatiser la tâche avec un script python (search_md5.py). Ce script, dans sa version finale, n'affiche les messages des README que s'il sont lu pour la première fois, et indique leurs provenance dans l'arborescence. Il parcourt l'arborescence recursivement.
+Vu la taille à parcourir, nous décidons d'automatiser la tâche avec un script python ([`search_md5.py`](search_md5.py)). Ce script, dans sa version finale, n'affiche les messages des README que s'ils sont lus pour la première fois, et indique leur provenance dans l'arborescence. Il parcourt l'arborescence récursivement.
 ```
 $> python3 search_md5.py [ip]
 
